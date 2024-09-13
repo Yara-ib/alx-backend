@@ -17,7 +17,6 @@ class Config:
 
 
 app.config.from_object(Config)
-
 babel = Babel(app)
 
 
@@ -30,3 +29,7 @@ def home_page() -> str:
         str: Hello world as header in html page
     """
     return render_template("0-index.html")
+
+
+if __name__ == "__main__":
+    app.run()
