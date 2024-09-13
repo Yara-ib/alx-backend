@@ -28,8 +28,4 @@ def home_page() -> str:
     Returns:
         str: Hello world as header in html page
     """
-    return render_template("0-index.html")
-
-
-if __name__ == "__main__":
-    app.run()
+    return render_template("1-index.html")
