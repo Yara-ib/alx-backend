@@ -1,6 +1,12 @@
-import publisher from './5-publisher';
+import { createClient } from 'redis';
 
-const subscriber = publisher.duplicate();
+const subscriber = createClient();
+
+subscriber.on('error', (err) =>
+  console.error(`Redis client not connected to the server: ${err}`)
+).connected;
+console.log('Redis client connected to the server');
+
 const channel = 'holberton school channel';
 
 subscriber.subscribe(channel);
