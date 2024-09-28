@@ -10,3 +10,5 @@ const sendNotification = (phoneNumber, message) => {
 queue.process('push_notification_code', function (job, done) {
   sendNotification(job.data.phoneNumber, job.data.message);
 });
+
+module.exports = sendNotification;
